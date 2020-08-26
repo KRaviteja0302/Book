@@ -2,6 +2,8 @@ var express=require('express');
 
 const mongoose = require('mongoose');
 
+const port = process.env.PORT;
+
 require('dotenv/config');
 
 var Book=require('./BookApp/controller/book.js');
@@ -24,6 +26,6 @@ app.use(bodyparser.urlencoded({extended:true}));
 
     }, () => console.log('connected'));
 
-    app.listen(5000,()=>{
-        console.log('server listening on the port 5000')
+    app.listen(port,()=>{
+        console.log('server listening on the port ')
     })
